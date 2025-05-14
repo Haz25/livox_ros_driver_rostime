@@ -48,6 +48,8 @@ uint64_t last_livox_timestamp = 0;
 uint64_t livox_int_timestamp = 0;
 double scale = 1;
 
+double time_offset = 0.005;
+
 namespace livox_ros {
 
 /** Lidar Data Distribute Control--------------------------------------------*/
@@ -519,7 +521,7 @@ uint32_t Lddc::PublishImuData(LidarDataQueue *queue, uint32_t packet_num,
   if (timestamp >= 0) {
     //imu_data.header.stamp = ros::Time(timestamp / 1000000000.0);  // to ros time stamp
     if (timestamp > last_livox_timestamp) 
-      imu_data.header.stamp = ros::Time((timestamp - last_livox_timestamp) * (scale / 1000000000.0) + last_ros_time);
+      imu_data.header.stamp = ros::Time((timestamp - last_livox_timestamp) * (scale / 1000000000.0) + last_ros_time + time_offset);
     else imu_data.header.stamp = ros::Time::now();
   }
 
