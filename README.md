@@ -38,7 +38,7 @@ For ROS installation, please refer to the ROS installation guide :
 
 1. Get livox_ros_driver from GitHub :
 
-　　`git clone https://github.com/Livox-SDK/livox_ros_driver.git ws_livox/src`
+　　`git clone https://github.com/Haz25/livox_ros_driver_rostime.git livox_ws/src`
 
 &ensp;&ensp;&ensp;&ensp;***Note :***
 
@@ -47,7 +47,7 @@ For ROS installation, please refer to the ROS installation guide :
 2. Use the following command to build livox_ros_driver :
 
    ```bash
-   cd ws_livox
+   cd livox_ws
    catkin_make
    ```
 
